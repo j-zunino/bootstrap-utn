@@ -1,19 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+    lang="en"
+    data-bs-theme="dark">
     <head>
         <meta charset="UTF-8" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0" />
-        <title>Bootstrap Speedtest</title>
+        <title>Bootstrap SpeedTest</title>
 
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossorigin="anonymous" />
+
+        <style>
+            .navbar {
+                filter: drop-shadow(10px 0px 10px #00000070);
+                border-radius: 0 0 8px 8px;
+                transition: border-radius 365ms ease-out,
+                    margin 350ms cubic-bezier(0, 0.85, 0.74, 0.98);
+            }
+
+            .navbar-logo svg {
+                margin-bottom: 5px;
+                margin-right: 3px;
+            }
+
+            .navbar-float {
+                margin: 5px;
+                border-radius: 8px;
+            }
+
+            .nav-link {
+                margin: 4px 0;
+                padding: 4px 10px !important;
+                border-radius: 4px;
+
+                &:hover {
+                    background-color: #3f474f;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .navbar > .container-fluid {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+        </style>
     </head>
     <body>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-logo">
+                    <a
+                        class="navbar-brand"
+                        href="#">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#fff"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-speedtest">
+                            <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none" />
+                            <path d="M5.636 19.364a9 9 0 1 1 12.728 0" />
+                            <path d="M16 9l-4 4" />
+                        </svg>
+                        SpeedTest</a
+                    >
+                </div>
+
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#inicio"
+                            >Inicio</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#resultados"
+                            >Resultados</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#info"
+                            >Información</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
             integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -22,5 +114,7 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
             integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
             crossorigin="anonymous"></script>
+
+        <script src="./js/scroll.js"></script>
     </body>
 </html>
