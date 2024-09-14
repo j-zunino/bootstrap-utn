@@ -49,11 +49,20 @@
             .nav-link:hover::after {
                 width: 100%;
             }
+
             #inicio,
-            #test,
-            #resultados,
-            #info {
-                scroll-margin-top: 80px;
+            #reaction,
+            #click,
+            #result {
+                scroll-margin-top: 10px;
+            }
+
+            .card-body {
+                margin: 0 auto !important;
+            }
+
+            .card {
+                border-radius: 8px;
             }
 
             .container-test {
@@ -69,6 +78,13 @@
                 .navbar > .container-fluid {
                     flex-direction: column;
                     gap: 10px;
+                }
+
+                #inicio,
+                #reaction,
+                #click,
+                #result {
+                    scroll-margin-top: 60px;
                 }
             }
         </style>
@@ -131,6 +147,77 @@
                 id="inicio"
                 class="container-fluid py-5 my-5">
                 <h1 class="text-center">Speed Test</h1>
+                <p class="text-center mt-3">
+                    Aquí podrás medir tu tiempo de reacción y velocidad de click
+                    . Haz clic en las tarjetas a continuación para comenzar con
+                    cada prueba.
+                </p>
+                <div class="container mt-5">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-4 mb-4">
+                            <a
+                                href="#reaction"
+                                class="card text-decoration-none bg-dark text-white">
+                                <div
+                                    class="card-body d-flex align-items-center">
+                                    <h5 class="card-title mb-0">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="40"
+                                            height="40"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path
+                                                stroke="none"
+                                                d="M0 0h24v24H0z"
+                                                fill="none" />
+                                            <path
+                                                d="M13 2l.018 .001l.016 .001l.083 .005l.011 .002h.011l.038 .009l.052 .008l.016 .006l.011 .001l.029 .011l.052 .014l.019 .009l.015 .004l.028 .014l.04 .017l.021 .012l.022 .01l.023 .015l.031 .017l.034 .024l.018 .011l.013 .012l.024 .017l.038 .034l.022 .017l.008 .01l.014 .012l.036 .041l.026 .027l.006 .009c.12 .147 .196 .322 .218 .513l.001 .012l.002 .041l.004 .064v6h5a1 1 0 0 1 .868 1.497l-.06 .091l-8 11c-.568 .783 -1.808 .38 -1.808 -.588v-6h-5a1 1 0 0 1 -.868 -1.497l.06 -.091l8 -11l.01 -.013l.018 -.024l.033 -.038l.018 -.022l.009 -.008l.013 -.014l.04 -.036l.028 -.026l.008 -.006a1 1 0 0 1 .402 -.199l.011 -.001l.027 -.005l.074 -.013l.011 -.001l.041 -.002z" />
+                                        </svg>
+                                        Reaction Time
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <a
+                                href="#click"
+                                class="card text-decoration-none bg-dark text-white">
+                                <div
+                                    class="card-body d-flex align-items-center">
+                                    <h5 class="card-title mb-0">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="40"
+                                            height="40"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-click">
+                                            <path
+                                                stroke="none"
+                                                d="M0 0h24v24H0z"
+                                                fill="none" />
+                                            <path d="M3 12l3 0" />
+                                            <path d="M12 3l0 3" />
+                                            <path d="M7.8 7.8l-2.2 -2.2" />
+                                            <path d="M16.2 7.8l2.2 -2.2" />
+                                            <path d="M7.8 16.2l-2.2 2.2" />
+                                            <path
+                                                d="M12 12l9 3l-4 2l-2 4l-3 -9"
+                                                fill="currentColor" />
+                                        </svg>
+                                        Click Speed
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="container-fluid bg-dark text-white text-center g-0">
@@ -248,7 +335,7 @@
 
                 <div
                     id="click"
-                    class="py-5 my-5">
+                    class="py-5">
                     <h2>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -285,6 +372,7 @@
                 <h2 class="text-center">Resultados</h2>
                 <p class="text-center">
                     Más información acerca de las pruebas de velocidad.
+                    <!-- intentos, average, mejor, peor. -->
                 </p>
             </section>
         </main>
