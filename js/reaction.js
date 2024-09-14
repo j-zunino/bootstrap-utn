@@ -69,6 +69,19 @@ const earlyTest = () => {
     textTest.innerText = 'Haga click para re intentar.';
 };
 
+const errorTest = () => {
+    container.classList.remove('bg-danger');
+    container.classList.remove('bg-success');
+
+    iconBolt.classList.add('d-none');
+    iconDots.classList.add('d-none');
+    iconTime.classList.add('d-none');
+    iconAlert.classList.remove('d-none');
+
+    titleTest.innerText = 'Algo salio mal, vuelva a intentarlo';
+    textTest.style.visibility = 'hidden';
+};
+
 const reactionTest = () => {
     const bgStatus = window.getComputedStyle(container).backgroundColor;
     const initial = 'rgb(13, 110, 253)';
@@ -86,6 +99,7 @@ const reactionTest = () => {
             stopTest();
             break;
         default:
+            errorTest();
             break;
     }
 };
