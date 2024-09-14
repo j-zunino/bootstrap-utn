@@ -55,61 +55,6 @@
             #info {
                 scroll-margin-top: 80px;
             }
-            .gauge {
-                height: 300px;
-                position: relative;
-            }
-            .gauge svg {
-                width: 100%;
-                height: 100%;
-            }
-            .gauge-needle {
-                width: 25px;
-                transform-origin: center;
-                position: absolute;
-                top: 60%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            .gauge .speed-text {
-                position: absolute;
-                width: 100%;
-                text-align: center;
-                top: 60%;
-                transform: translateY(-50%);
-                font-size: 28px;
-            }
-            .gauge-path-background,
-            .stroke-background {
-                fill: rgb(167, 167, 167);
-                stroke: rgb(167, 167, 167);
-                stroke-width: 12px;
-            }
-            .gauge-path-current-speed,
-            .stroke-primary {
-                stroke: green;
-            }
-            .gauge-path-current-speed {
-                transform: rotate(130deg);
-            }
-
-            .gauge-path-current-speed,
-            .gauge-path-loading {
-                fill: transparent;
-                transform-origin: center;
-                stroke-width: 9px;
-                animation-duration: 650ms;
-                animation-timing-function: linear;
-                animation-iteration-count: 1;
-                animation-fill-mode: backwards;
-            }
-
-            .gauge-path-overlay {
-                stroke-width: 12px;
-                /* stroke: #3f474f; */
-                /* fill: #3f474f; */
-                fill: transparent;
-            }
 
             @media (max-width: 768px) {
                 .navbar > .container-fluid {
@@ -125,7 +70,7 @@
                 <div class="navbar-logo">
                     <a
                         class="navbar-brand"
-                        href="#">
+                        href="#inicio">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -151,29 +96,22 @@
                     <li class="nav-item">
                         <a
                             class="nav-link"
-                            href="#inicio"
-                            >Inicio</a
+                            href="#reaction"
+                            >Reaction Time</a
                         >
                     </li>
                     <li class="nav-item">
                         <a
                             class="nav-link"
-                            href="#test"
-                            >SpeedTest</a
+                            href="#click"
+                            >Click Speed</a
                         >
                     </li>
                     <li class="nav-item">
                         <a
                             class="nav-link"
-                            href="#resultados"
+                            href="#result"
                             >Resultados</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            class="nav-link"
-                            href="#info"
-                            >Información</a
                         >
                     </li>
                 </ul>
@@ -185,92 +123,26 @@
                 id="inicio"
                 class="container-fluid py-5 my-5">
                 <h1 class="text-center">Inicio</h1>
-                <p class="text-center">
-                    Bienvenido a nuestra página de pruebas de velocidad.
-                </p>
-            </section>
-
-            <div
-                id="test"
-                class="container-fluid bg-dark text-white py-5 text-center my-5">
-                <h2>Speed Test</h2>
-                <div class="gauge">
-                    <div
-                        class="gauge-needle"
-                        id="gauge-needle">
-                        <svg
-                            viewBox="0 0 120 801"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient
-                                    id="needleGradient"
-                                    x1="0"
-                                    x2="0"
-                                    y1="0"
-                                    y2="1">
-                                    <stop
-                                        class="stop1"
-                                        stop-opacity="0"
-                                        stop-color="transparent"
-                                        offset="0%"></stop>
-                                    <stop
-                                        class="stop1"
-                                        stop-opacity="0.95"
-                                        stop-color="currentColor"
-                                        offset="0%"></stop>
-                                </linearGradient>
-                            </defs>
-                            <path
-                                d="M95 800.5l-34.25-.958H26.5L0 .5h120l-25 800z"
-                                fill="url(#needleGradient)"></path>
-                        </svg>
-                    </div>
-                    <svg viewBox="0 0 100 100">
-                        <circle
-                            class="gauge-path-background stroke-background"
-                            r="43"
-                            cx="50%"
-                            cy="50%"></circle>
-                        <circle
-                            class="gauge-path-current-speed stroke-primary"
-                            r="43"
-                            cx="50%"
-                            cy="50%"
-                            stroke-dasharray="0"
-                            stroke-dashoffset="0"
-                            id="gauge-progress"></circle>
-
-                        <circle
-                            class="gauge-path-overlay"
-                            r="43"
-                            cx="50%"
-                            cy="50%"></circle>
-                    </svg>
-                    <div class="speed-text mt-2">
-                        <h3 id="speed-display">0 Mbps</h3>
-                    </div>
-                </div>
-                <div class="container text-center mt-4">
-                    <button
-                        class="btn btn-primary"
-                        onclick="startTest()">
-                        Test Speed
-                    </button>
-                </div>
-            </div>
-
-            <section
-                id="resultados"
-                class="container py-5">
-                <h2 class="text-center">Resultados</h2>
-                <p class="text-center">
-                    Aquí puedes ver los resultados de tu prueba de velocidad.
-                </p>
             </section>
 
             <section
-                id="info"
-                class="container py-5">
+                class="container-fluid bg-dark text-white text-center py-5 my-5">
+                <div
+                    id="reaction"
+                    class="py-5 my-5">
+                    <h2>Reaction Time</h2>
+                </div>
+
+                <div
+                    id="click"
+                    class="py-5 my-5">
+                    <h2>Click Speed</h2>
+                </div>
+            </section>
+
+            <section
+                id="results"
+                class="container-fluid text-center py-5 my-5">
                 <h2 class="text-center">Información</h2>
                 <p class="text-center">
                     Más información acerca de las pruebas de velocidad.
@@ -278,7 +150,7 @@
             </section>
         </main>
 
-        <footer class="bg-dark text-white text-center py-3">
+        <footer class="container-fluid bg-dark text-white text-center py-3">
             <p>© 2024 SpeedTest. Todos los derechos reservados.</p>
         </footer>
 
@@ -290,40 +162,5 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
             integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
             crossorigin="anonymous"></script>
-
-        <script>
-            function startTest() {
-                const gaugeProgress = document.getElementById('gauge-progress');
-                const radius = 43; // Radius of the gauge circle
-                const circumference = 2 * Math.PI * radius;
-
-                // Initial setup: no transition and full circumference
-                gaugeProgress.style.transition = 'none';
-                gaugeProgress.style.strokeDasharray = `${circumference} ${circumference}`;
-                gaugeProgress.style.strokeDashoffset = circumference;
-
-                // Force a reflow to apply the initial state
-                gaugeProgress.getBoundingClientRect();
-
-                // Generate a random speed between 0 and 100 Mbps
-                const speed = Math.floor(Math.random() * 101);
-
-                // Update the speed display text
-                document.getElementById(
-                    'speed-display'
-                ).innerText = `${speed} Mbps`;
-
-                // Calculate the new stroke-dasharray based on the speed
-                const progress = (speed / 100) * circumference;
-
-                // Ensure stroke-dasharray is greater than or equal to stroke-dashoffset
-                gaugeProgress.style.strokeDasharray = `${progress} ${circumference}`;
-
-                // Apply the new stroke-dashoffset based on the progress
-                gaugeProgress.style.strokeDashoffset = circumference - progress;
-
-                // Enable transition for smooth animation
-            }
-        </script>
     </body>
 </html>
