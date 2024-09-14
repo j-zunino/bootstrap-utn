@@ -33,7 +33,7 @@ const startTest = () => {
         container.classList.remove('bg-danger');
         container.classList.add('bg-success');
 
-        titleTest.innerText = 'Click';
+        titleTest.innerText = 'Click!';
         textTest.style.visibility = 'hidden';
 
         greenTime = Date.now();
@@ -53,7 +53,7 @@ const stopTest = () => {
     titleTest.innerText = `${reactionTime}ms`;
 
     textTest.style.visibility = 'visible';
-    textTest.innerText = 'Haga click para continuar';
+    textTest.innerText = 'Haga click para continuar.';
 };
 
 const earlyTest = () => {
@@ -66,7 +66,7 @@ const earlyTest = () => {
     titleTest.innerText = 'Muy pronto!';
 
     textTest.style.visibility = 'visible';
-    textTest.innerText = 'Haga click para re intentar';
+    textTest.innerText = 'Haga click para re intentar.';
 };
 
 const reactionTest = () => {
