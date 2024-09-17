@@ -57,8 +57,13 @@
                 scroll-margin-top: 10px;
             }
 
-            h1 {
-                font-weight: 700;
+            h1,
+            h2 {
+                font-weight: 600;
+            }
+
+            h4 {
+                font-weight: 600;
             }
 
             .card-body {
@@ -69,9 +74,19 @@
                 border-radius: 8px;
             }
 
-            .container-test {
+            #reaction-test,
+            #click-test {
                 padding: 200px 0;
                 user-select: none;
+                cursor: pointer;
+                transition: opacity 0.5s ease-out;
+            }
+
+            #click-test.cooldown {
+                opacity: 0.5;
+                pointer-events: none;
+
+                transition: opacity 0s;
             }
 
             #title-test {
@@ -227,7 +242,7 @@
             <section class="container-fluid bg-dark text-white text-center g-0">
                 <div
                     id="reaction"
-                    class="py-5">
+                    class="pt-5">
                     <h2>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -247,7 +262,7 @@
 
                     <div
                         id="reaction-test"
-                        class="container-test bg-primary mt-5">
+                        class="bg-primary mt-5">
                         <!-- Bolt -->
                         <svg
                             id="icon-bolt"
@@ -367,6 +382,107 @@
                         </svg>
                         Click Speed
                     </h2>
+
+                    <div
+                        id="click-test"
+                        class="bg-primary mt-5">
+                        <!-- Click -->
+                        <svg
+                            id="icon-click"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-click">
+                            <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none" />
+                            <path d="M3 12l3 0" />
+                            <path d="M12 3l0 3" />
+                            <path d="M7.8 7.8l-2.2 -2.2" />
+                            <path d="M16.2 7.8l2.2 -2.2" />
+                            <path d="M7.8 16.2l-2.2 2.2" />
+                            <path
+                                d="M12 12l9 3l-4 2l-2 4l-3 -9"
+                                fill="currentColor" />
+                        </svg>
+
+                        <!-- Dots -->
+                        <svg
+                            id="icon-dots"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="d-none">
+                            <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none" />
+                            <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                            <path
+                                d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                            <path
+                                d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                        </svg>
+
+                        <!-- Time -->
+                        <svg
+                            id="icon-time"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="d-none">
+                            <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none" />
+                            <path d="M5 13a7 7 0 1 0 14 0a7 7 0 0 0 -14 0z" />
+                            <path d="M14.5 10.5l-2.5 2.5" />
+                            <path d="M17 8l1 -1" />
+                            <path d="M14 3h-4" />
+                        </svg>
+
+                        <!-- alert -->
+                        <svg
+                            id="icon-alert"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="d-none">
+                            <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none" />
+                            <path
+                                d="M17 3.34a10 10 0 1 1 -15 8.66l.005 -.324a10 10 0 0 1 14.995 -8.336m-5 11.66a1 1 0 0 0 -1 1v.01a1 1 0 0 0 2 0v-.01a1 1 0 0 0 -1 -1m0 -7a1 1 0 0 0 -1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0 -1 -1" />
+                        </svg>
+
+                        <h2 id="title-test">Click para comenzar</h2>
+                        <p id="text-test">
+                            Cuando este recuadro se vuelva verde, haz click lo
+                            más rápido que puedas.
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -477,5 +593,6 @@
 
         <script src="./js/scroll.js"></script>
         <script src="./js/reaction.js"></script>
+        <script src="./js/click.js"></script>
     </body>
 </html>
