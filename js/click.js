@@ -58,7 +58,7 @@ const clickTest = () => {
             containerClick.classList.remove('cooldown');
         }, cooldownDuration);
 
-        updateClickTestResults(clickCount, cps);
+        updateClickTestResults(cps);
     };
 
     const incrementClickCount = () => {
