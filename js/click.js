@@ -43,7 +43,10 @@ const clickTest = () => {
     const stopTest = () => {
         containerClick.classList.remove('bg-success');
 
-        titleTest.innerText = `You clicked ${clickCount} times!`;
+        // Calculate CPS (clicks per second)
+        const cps = (clickCount / (testDuration / 1000)).toFixed(2);
+
+        titleTest.innerText = `You clicked ${clickCount} times! (${cps} CPS)`;
         textTest.style.visibility = 'visible';
         textTest.innerText = 'Click to try again!';
 
