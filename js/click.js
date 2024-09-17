@@ -15,15 +15,15 @@ const clickTest = () => {
     const iconAlert = document.querySelector('#click-test > #icon-alert');
 
     let clickCount = 0;
-    let testDuration = 5000; // 5 seconds
-    let cooldownDuration = 3000; // 3 seconds
+    let testDuration = 5000;
+    let cooldownDuration = 3000;
     let timeoutTest;
     let cooldownTimeout;
 
     const startTest = () => {
         containerClick.classList.add('bg-success');
 
-        clickCount = 0; // Reset click count
+        clickCount = 0;
         titleTest.innerText = `${clickCount}`;
         textTest.style.visibility = 'hidden';
 
@@ -32,7 +32,6 @@ const clickTest = () => {
         iconAlert.classList.add('d-none');
         iconDots.classList.remove('d-none');
 
-        // Increment click count on each click
         containerClick.addEventListener('click', incrementClickCount);
 
         timeoutTest = setTimeout(() => {
@@ -43,33 +42,30 @@ const clickTest = () => {
     const stopTest = () => {
         containerClick.classList.remove('bg-success');
 
-        // Calculate CPS (clicks per second)
         const cps = (clickCount / (testDuration / 1000)).toFixed(2);
 
-        titleTest.innerText = `You clicked ${clickCount} times! (${cps} CPS)`;
+        titleTest.innerText = `Haz hecho click ${clickCount} veces! (${cps} CPS)`;
         textTest.style.visibility = 'visible';
-        textTest.innerText = 'Click to try again!';
+        textTest.innerText = 'Click para volver a intentar!';
 
         iconDots.classList.add('d-none');
         iconTime.classList.remove('d-none');
 
-        // Remove click event listener to stop counting clicks
         containerClick.removeEventListener('click', incrementClickCount);
 
-        // Start cooldown period
         containerClick.classList.add('cooldown');
         cooldownTimeout = setTimeout(() => {
             containerClick.classList.remove('cooldown');
         }, cooldownDuration);
+
+        updateClickTestResults(clickCount, cps);
     };
 
-    // Increment click count and update title
     const incrementClickCount = () => {
         clickCount++;
         titleTest.innerText = `${clickCount}`;
     };
 
-    // Check if in cooldown
     if (containerClick.classList.contains('cooldown')) {
         return;
     }
@@ -81,7 +77,6 @@ const clickTest = () => {
         case waiting:
             break;
         case running:
-            // stopTest();
             break;
         default:
             break;

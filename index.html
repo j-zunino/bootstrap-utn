@@ -168,7 +168,7 @@
                 <h1 class="text-center">SpeedTest</h1>
                 <p class="text-center mt-3">
                     Aquí podrás medir tu tiempo de reacción y velocidad de click
-                    . Haz clic en las tarjetas a continuación para comenzar con
+                    . Haz click en las tarjetas a continuación para comenzar con
                     cada prueba.
                 </p>
                 <div class="container mt-5">
@@ -486,13 +486,9 @@
                 </div>
             </section>
 
-            <section
-                id="result"
-                class="container-fluid text-center py-5 my-5">
+            <section id="result" class="container-fluid text-center py-5 my-5">
                 <h2 class="text-center">Resultados</h2>
-                <p class="text-center">
-                    Más información acerca de las pruebas de velocidad.
-                </p>
+                <p class="text-center">Más información acerca de las pruebas de velocidad.</p>
 
                 <div class="row justify-content-center">
                     <!-- Reaction Test -->
@@ -503,7 +499,7 @@
                                 <div class="card h-100 bg-dark text-white">
                                     <div class="card-body">
                                         <h5 class="card-title">Intentos</h5>
-                                        <p class="card-text">0</p>
+                                        <p class="card-text reaction-attempts">0</p>
                                     </div>
                                 </div>
                             </div>
@@ -511,7 +507,7 @@
                                 <div class="card h-100 bg-dark text-white">
                                     <div class="card-body">
                                         <h5 class="card-title">Promedio</h5>
-                                        <p class="card-text">0 ms</p>
+                                        <p class="card-text reaction-average">0 ms</p>
                                     </div>
                                 </div>
                             </div>
@@ -519,7 +515,7 @@
                                 <div class="card h-100 bg-dark text-white">
                                     <div class="card-body">
                                         <h5 class="card-title">Mejor</h5>
-                                        <p class="card-text">0 ms</p>
+                                        <p class="card-text reaction-best">0 ms</p>
                                     </div>
                                 </div>
                             </div>
@@ -527,7 +523,7 @@
                                 <div class="card h-100 bg-dark text-white">
                                     <div class="card-body">
                                         <h5 class="card-title">Peor</h5>
-                                        <p class="card-text">0 ms</p>
+                                        <p class="card-text reaction-worst">0 ms</p>
                                     </div>
                                 </div>
                             </div>
@@ -536,15 +532,13 @@
 
                     <!-- Click Speed Test -->
                     <div class="col-lg-6 col-md-6 mb-4">
-                        <h4 class="text-center mb-4">
-                            Prueba de Velocidad de Clic
-                        </h4>
+                        <h4 class="text-center mb-4">Prueba de Velocidad de Click</h4>
                         <div class="row row-cols-1 row-cols-md-2 g-4">
                             <div class="col">
                                 <div class="card h-100 bg-dark text-white">
                                     <div class="card-body">
                                         <h5 class="card-title">Intentos</h5>
-                                        <p class="card-text">0</p>
+                                        <p class="card-text click-attempts">0</p>
                                     </div>
                                 </div>
                             </div>
@@ -552,7 +546,7 @@
                                 <div class="card h-100 bg-dark text-white">
                                     <div class="card-body">
                                         <h5 class="card-title">Promedio</h5>
-                                        <p class="card-text">0 clics/seg</p>
+                                        <p class="card-text click-average">0 clicks/seg</p>
                                     </div>
                                 </div>
                             </div>
@@ -560,7 +554,7 @@
                                 <div class="card h-100 bg-dark text-white">
                                     <div class="card-body">
                                         <h5 class="card-title">Mejor</h5>
-                                        <p class="card-text">0 clics/seg</p>
+                                        <p class="card-text click-best">0 clicks/seg</p>
                                     </div>
                                 </div>
                             </div>
@@ -568,7 +562,7 @@
                                 <div class="card h-100 bg-dark text-white">
                                     <div class="card-body">
                                         <h5 class="card-title">Peor</h5>
-                                        <p class="card-text">0 clics/seg</p>
+                                        <p class="card-text click-worst">0 clicks/seg</p>
                                     </div>
                                 </div>
                             </div>
@@ -594,5 +588,6 @@
         <script src="./js/scroll.js"></script>
         <script src="./js/reaction.js"></script>
         <script src="./js/click.js"></script>
+        <script src="./js/storage.js"></script>
     </body>
 </html>

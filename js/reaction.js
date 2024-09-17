@@ -2,6 +2,7 @@ const containerReact = document.querySelector('#reaction > #reaction-test');
 
 let startTime;
 let greenTime;
+let timeoutTest;
 
 const reactionTest = () => {
     const bgStatus = window.getComputedStyle(containerReact).backgroundColor;
@@ -17,9 +18,7 @@ const reactionTest = () => {
     const iconTime = document.querySelector('#reaction-test > #icon-time');
     const iconAlert = document.querySelector('#reaction-test > #icon-alert');
 
-    const randomNumber = (min, max) => {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
+    const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
     const startTest = () => {
         const delay = randomNumber(1000, 10000);
@@ -40,7 +39,7 @@ const reactionTest = () => {
             containerReact.classList.remove('bg-danger');
             containerReact.classList.add('bg-success');
 
-            titleTest.innerText = 'Click!';
+            titleTest.innerText = '¡Haz clic!';
             textTest.style.visibility = 'hidden';
 
             greenTime = Date.now();
@@ -49,7 +48,6 @@ const reactionTest = () => {
 
     const stopTest = () => {
         const clickTime = Date.now();
-
         const reactionTime = clickTime - greenTime;
 
         containerReact.classList.remove('bg-success');
@@ -57,10 +55,12 @@ const reactionTest = () => {
         iconDots.classList.add('d-none');
         iconTime.classList.remove('d-none');
 
-        titleTest.innerText = `${reactionTime}ms`;
+        titleTest.innerText = `${reactionTime} ms`;
 
         textTest.style.visibility = 'visible';
-        textTest.innerText = 'Haga click para continuar.';
+        textTest.innerText = 'Haz clic para continuar.';
+
+        updateReactionTestResults(reactionTime);
     };
 
     const earlyTest = () => {
@@ -70,10 +70,10 @@ const reactionTest = () => {
         iconDots.classList.add('d-none');
         iconAlert.classList.remove('d-none');
 
-        titleTest.innerText = 'Muy pronto!';
+        titleTest.innerText = '¡Muy pronto!';
 
         textTest.style.visibility = 'visible';
-        textTest.innerText = 'Haga click para re intentar.';
+        textTest.innerText = 'Haz clic para reintentar.';
     };
 
     const errorTest = () => {
@@ -85,7 +85,7 @@ const reactionTest = () => {
         iconTime.classList.add('d-none');
         iconAlert.classList.remove('d-none');
 
-        titleTest.innerText = 'Algo salio mal, vuelva a intentarlo';
+        titleTest.innerText = 'Algo salió mal, vuelve a intentarlo';
         textTest.style.visibility = 'hidden';
     };
 
